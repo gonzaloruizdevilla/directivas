@@ -17,6 +17,8 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css">
     <!-- endbuild -->
   </head>
   <body ng-app="directivasApp">
@@ -25,7 +27,20 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container">
+        <h1><a href="http://www.meetup.com/AngularJS_Madrid/">AngularJS Madrid</a>: <a href="https://slid.es/gruizdevilla/servicios-de-angularjs/">Servicios</a></h1>
+      <div class="row" ng-controller="MenuCtrl">
+        <div class="col-xs-3">
+          <ul class="nav">
+            <li ng-repeat="opcion in menu" ng-class="{active: active($index)}"><a href="#/ej{{$index}}">{{$index}}-{{opcion}}</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-8">
+          <div class="container" ng-view=""></div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -52,12 +67,18 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="bower_components/angular-highlightjs/angular-highlightjs.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/Menu.js"></script>
+        <script src="scripts/controllers/ej1.js"></script>
+        <script src="scripts/directives/chispas.js"></script>
         <!-- endbuild -->
 </body>
 </html>
