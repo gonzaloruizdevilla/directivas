@@ -1,4 +1,4 @@
 'use strict';
 
 angular.module('directivasApp')
-  .controller('MainCtrl', function () {});
+  .controller('Ej2Ctrl', function () {});

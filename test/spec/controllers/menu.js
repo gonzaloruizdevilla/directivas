@@ -21,4 +21,5 @@ describe('Controller: MenuCtrl', function () {
   it('should attach a list of menu options to the scope', function () {
     expect(scope.menu.length).toBe(menu.length);
   });
+
 });

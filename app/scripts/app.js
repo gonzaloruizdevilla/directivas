@@ -2,7 +2,10 @@
 
 var menu = [
   'Introducción',
-  'Chispas'
+  'Chispas',
+  'Chispas 2',
+  'Reloj',
+  'Reloj 2'
 ];
 
 angular.module('directivasApp', [
