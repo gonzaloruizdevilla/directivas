@@ -5,7 +5,8 @@ var menu = [
   'Chispas',
   'Chispas 2',
   'Reloj',
-  'Reloj 2'
+  'Reloj 2',
+  'Reloj 3'
 ];
 
 angular.module('directivasApp', [
