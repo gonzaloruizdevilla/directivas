@@ -71,6 +71,134 @@ body {
     margin-top: 28px;
 }
 
+/* wheel */
+$theme_Blue: #43a1cd;
+$theme_Green: #639b47;
+$theme_LightGreen: #9ac147;
+$theme_Yellow: #e1e23b;
+$theme_Orange: #f7941e;
+$theme_Rust: #ba3e2e;
+$theme_Red: #9a1d34;
+$theme_Purple: #662a6c;
+$theme_Violet: #272b66;
+$theme_Indigo: #2d559f;
+
+@mixin no-select() {
+      -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+
+@mixin origin($x, $y) {
+    -webkit-transform-origin: $x $y;
+       -moz-transform-origin: $x $y;
+        -ms-transform-origin: $x $y;
+         -o-transform-origin: $x $y;
+            transform-origin: $x $y;
+}
+
+@mixin transition($speed: 0.2s, $easing: ease) {
+    -webkit-transition: all $speed $easing;
+       -moz-transition: all $speed $easing;
+        -ms-transition: all $speed $easing;
+         -o-transition: all $speed $easing;
+            transition: all $speed $easing;
+}
+@mixin swatch($color) {
+     border-color: $color transparent transparent transparent;
+}
+
+@mixin rotate($degrees: 90deg) {
+    -webkit-transform: rotate($degrees);
+       -moz-transform: rotate($degrees);
+        -ms-transform: rotate($degrees);
+         -o-transform: rotate($degrees);
+            transform: rotate($degrees);
+}
+rueda {
+    height: 400px;
+    display: block;
+}
+
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+
+#colorWheel {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto ;
+    position: relative;
+    @include origin(50px, 150px);
+    @include no-select();
+    
+    &.rotating {
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -webkit-animation-name: rotate;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+    }
+    &.stop {
+        @include  rotate(0);
+        @include transition(0.5s, linear);
+    }
+
+    span {
+        $deg: (360deg / 10);
+        position: absolute;
+        -webkit-transform-origin: 50% 50%;
+        border-style: solid;
+        border-width: 150px 50px;
+        box-sizing: border-box;
+        &.color01{@include rotate (0); @include swatch($theme_Blue);}
+        &.color02{@include rotate($deg * 1); @include swatch($theme_Green);}
+        &.color03{@include rotate($deg * 2); @include swatch($theme_LightGreen);}
+        &.color04{@include rotate($deg * 3); @include swatch($theme_Yellow);}
+        &.color05{@include rotate($deg * 4); @include swatch($theme_Orange);}
+        &.color06{@include rotate($deg * 5); @include swatch($theme_Rust);}
+        &.color07{@include rotate($deg * 6); @include swatch($theme_Red);}
+        &.color08{@include rotate($deg * 7); @include swatch($theme_Purple);}
+        &.color09{@include rotate($deg * 8); @include swatch($theme_Violet);}
+        &.color10{@include rotate($deg * 9); @include swatch($theme_Indigo);}
+    }
+    &:before {
+        content: "";
+        width: 360px;
+        height: 360px;
+        overflow: hidden;
+        position: absolute;
+        top: -30px;
+        left: -130px;
+        border-radius: 100%;
+        border: 30px solid #fff;
+        z-index: 100;
+    }
+    &:after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        border-radius: 100%;
+        background: #fff;
+        
+    }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
@@ -93,3 +221,5 @@ body {
         border-bottom: 0;
     }
 }
+
+
