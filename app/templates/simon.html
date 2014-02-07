@@ -1,0 +1,36 @@
+<h4>{{titulo}}</h4>
+<div ng-click="empieza();">
+  <p>
+    <span class="btn btn-success" ng-show="estado == 'esperando'">Start!</span>
+    (Dificultad: {{dificultad}})
+  </p>
+  <svg width="320" height="320" ng-hide="estado == 'esperando'">
+    <clipPath id="cut-circle">
+      <rect x="0" y="0" width="150" height="150" />
+    </clipPath>
+    <circle cx="160" cy="160" r="160" fill="#ddd" />
+    <circle class="simonbutton" ng-click="click(1)"
+      cx="160" cy="160" r="150"
+      clip-path="url(#cut-circle)" fill="green"
+      ng-class="{jugando: ('jugando' == estado), active: (ilumina==1)}"
+      transform="translate(10,10)"/>
+    <circle class="simonbutton" ng-click="click(2)"
+      cx="160" cy="160" r="150"
+      clip-path="url(#cut-circle)" fill="red"
+      ng-class="{jugando: ('jugando' == estado), active: (ilumina==2)}"
+      transform="rotate(90 150 150), translate(10, -10)" />
+    <circle class="simonbutton" ng-click="click(3)"
+      cx="160" cy="160" r="150"
+      clip-path="url(#cut-circle)" fill="blue"
+      ng-class="{jugando: ('jugando' == estado), active: (ilumina==3)}"
+      transform="rotate(180 150 150), translate(-10,-10)" />
+    <circle class="simonbutton" ng-click="click(4)"
+      cx="160" cy="160" r="150"
+      clip-path="url(#cut-circle)" fill="yellow"
+      ng-class="{jugando: ('jugando' == estado), active: (ilumina==4)}"
+      transform="rotate(270 150 150), translate(-10,10)" />
+    <rect x="155" y="0" width="10" height="320" fill="#ddd" />
+    <rect x="0" y="155" width="320" height="10" fill="#ddd" />
+    <circle cx="160" cy="160" r="40" fill="#ddd" />
+  </svg>
+</div>

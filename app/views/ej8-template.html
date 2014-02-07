@@ -1,0 +1,49 @@
+<h3>Simon</h3>
+
+<div ng-show="jugando">
+    <simon
+        titulo="Simon con AngularJS"
+        dificultad="dificultad"
+        on-end="muestraResultado(resultado)"/>
+</div>
+<div ng-hide="jugando">
+    <p ng-show="resultado">
+        Tus resultados:
+            Tiempo: {{resultado.tiempo}}s.
+            Movientos: {{resultado.movimientos}}.
+            Posición {{resultado.posicion}} de {{resultados.length}}
+    </p>
+    <p>Selecciona la dificultad:</p>
+    <p>
+        <button class="btn btn-success"
+            ng-click="empieza(1)">1</button>
+        <button class="btn btn-info"
+            ng-click="empieza(2)">2</button>
+        <button class="btn btn-warning"
+            ng-click="empieza(3)">3</button>
+        <button class="btn btn-danger"
+            ng-click="empieza(4)">4</button>
+    </p>
+    <table class="table" ng-show="resultados.length > 0">
+        <tr>
+            <th>Posicion</th>
+            <th>Dificultad</th>
+            <th>Movimientos</th>
+            <th>Tiempo</th>
+            <th>Motivo</th>
+        </tr>
+        <tr ng-repeat="res in resultados" ng-class="{actual: (res == resultado)}">
+            <td>{{res.posicion}}</td>
+            <td><span class="label"
+                ng-class="{
+                'label-success': (res.dificultad == 1),
+                'label-info': (res.dificultad == 2),
+                'label-warning': (res.dificultad == 3),
+                'label-danger': (res.dificultad == 4)
+            }">{{res.dificultad}}</span></td>
+            <td>{{res.movimientos}}</td>
+            <td>{{res.tiempo}}s</td>
+            <td>{{res.motivo.tipo}}</td>
+        </tr>
+    </table>
+</div>

@@ -132,6 +132,20 @@ rueda {
     to {-moz-transform: rotate(360deg);}
 }
 
+.actual {
+    font-weight: bold;
+}
+.simonbutton {
+    pointer-events: all;
+    opacity: 0.4;
+    transition-property: opacity;
+    transition-duration: .5s;
+    &.jugando:hover, &.active {
+        opacity: 1;
+    }
+
+}
+
 #colorWheel {
     height: 100px;
     width: 100px;

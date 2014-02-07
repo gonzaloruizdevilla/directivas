@@ -7,7 +7,9 @@ var menu = [
   'Reloj',
   'Reloj 2',
   'Reloj 3',
-  'Rueda'
+  'Rueda',
+  'Matryoshka',
+  'Simon'
 ];
 
 angular.module('directivasApp', [
