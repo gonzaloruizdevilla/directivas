@@ -1,11 +1,7 @@
+
 <p>
-  Estado:
-  <span ng-show="rotating">
-    girando <button class="btn btn-danger" ng-click="toggle()">Parar</button>
-  </span>
-  <span ng-hide="rotating">
-    parado <button class="btn btn-success" ng-click="toggle()">Girar</button>
-  </span>
+  <button ng-show="rotating" class="btn btn-danger" ng-click="toggle()">Parar</button>
+  <button ng-hide="rotating" class="btn btn-success" ng-click="toggle()">Girar</button>
 </p>
 <div id="colorWheel" ng-class="{'rotating': rotating, 'stop': !rotating}">
   <span class="color01"></span>
