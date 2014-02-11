@@ -135,6 +135,15 @@ rueda {
 .actual {
     font-weight: bold;
 }
+.centra{text-align: center}
+matryoshka svg > path:last-child {cursor:pointer;}
+matryoshka svg {cursor:default}
+
+.childdoll div {
+    text-align: center;
+}
+
+
 .simonbutton {
     pointer-events: all;
     opacity: 0.4;
