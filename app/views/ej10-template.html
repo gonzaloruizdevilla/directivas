@@ -1,0 +1,11 @@
+
+<h3>Cartas</h3>
+<div class="row" ng-repeat="number in numbers">
+	<div class="card-wrapper pull-left" ng-repeat="suite in suites">
+		<card>
+			<div class="card pull-left {{suite}}">
+				<div ng-include="'cards/'+ suite +'.' + number + '.html'" />
+			</div>
+		</card>
+	</div>
+</div>

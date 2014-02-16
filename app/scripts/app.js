@@ -9,9 +9,9 @@ var menu = [
   'Reloj 3',
   'Rueda',
   'Matryoshka',
-  'Simon'
   'Simon',
   'Primer grado',
+  'Cartas'
 ];
 
 angular.module('directivasApp', [

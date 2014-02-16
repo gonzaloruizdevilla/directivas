@@ -1,0 +1,11 @@
+
+<div id="flip_container">
+    <div id="flip_card" class="shadow">
+        <div class="front face">
+            <div ng-include="'cards/back.html'"></div>
+        </div>
+        <div class="back face center">
+            <div ng-transclude></div>
+        </div>
+    </div>
+</div>
