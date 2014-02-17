@@ -6,10 +6,6 @@ angular.module('directivasApp')
 
     $scope.jugando = false;
 
-    $scope.narra = function (evento){
-      console.log(evento);
-    };
-
     $scope.empieza = function(dificultad){
       $scope.dificultad = dificultad;
       $scope.jugando = true;

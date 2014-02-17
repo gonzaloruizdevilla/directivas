@@ -11,7 +11,6 @@ angular.module('directivasApp')
 
       recognizer.onresult = function(e) {
         var result;
-        console.log(e);
         if (e.results.length) {
           result = e.results[e.resultIndex];
           listeners.forEach(function (defer){
