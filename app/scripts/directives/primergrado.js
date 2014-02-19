@@ -15,8 +15,11 @@ angular.module('directivasApp')
         var SOLUTION_REGEXP = new RegExp('x (\\d) y (\\d)');
 
         scope.pideSolucion = function () {
+          scope.adelante = true;
           Listen.listen().then(function (result){
             var locals, match, correcto;
+
+            scope.adelante = false;
 
             ngModelCtrl.$setValidity('valores', true);
             ngModelCtrl.$setViewValue(null);

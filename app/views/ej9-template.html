@@ -1,22 +1,11 @@
 
-<div ng-form name="form">
-    <h3>Ecuación de primer grado</h3>
-    <p ng-repeat="ecuacion in ecuaciones">{{ecuacion}}</p>
-    <p class="alert alert-danger"
-        ng-show="form.solucion.$error.valores">
-        Los valores no son solución de la ecuación.</p>
-    <p class="alert alert-danger"
-        ng-show="form.solucion.$error.expresion">
-        No se te entendió.
-        La forma de decir la solución es: "x [número] y [número]"</p>
-    <p class="alert alert-success"
-        ng-show="form.$valid">¡Ecuación
-            resuelta con valores
-            <strong>(x: {{solucion.x}},
-            y: {{solucion.y}})</strong>!</p>
-
-    <input ng-model="solucion"
-        required
-        name="solucion"
-        primergrado="ecuaciones" />
+<h3>Cartas</h3>
+<div class="row" ng-repeat="number in numbers">
+	<div class="card-wrapper pull-left" ng-repeat="suite in suites">
+		<card>
+			<div class="card pull-left {{suite}}">
+				<div ng-include="'cards/'+ suite +'.' + number + '.html'" />
+			</div>
+		</card>
+	</div>
 </div>
