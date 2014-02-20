@@ -31,7 +31,5 @@ angular.module('directivasApp')
         return defer.promise;
       }
 
-      return {
-        listen: listen
-      };
+      return listen;
     });

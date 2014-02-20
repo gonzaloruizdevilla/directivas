@@ -16,7 +16,7 @@ angular.module('directivasApp')
 
         scope.pideSolucion = function () {
           scope.adelante = true;
-          Listen.listen().then(function (result){
+          Listen().then(function (result){
             var locals, match, correcto;
 
             scope.adelante = false;
