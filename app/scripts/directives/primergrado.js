@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('directivasApp')
-  .directive('primergrado', function (Listen, $parse) {
+  .directive('primergrado', function (listen, $parse) {
     return {
       templateUrl: 'templates/primergrado.html',
       restrict: 'A',
@@ -16,7 +16,7 @@ angular.module('directivasApp')
 
         scope.pideSolucion = function () {
           scope.adelante = true;
-          Listen().then(function (result){
+          listen().then(function (result){
             var locals, match, correcto;
 
             scope.adelante = false;

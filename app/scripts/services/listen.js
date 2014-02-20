@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('directivasApp')
-  .factory('Listen', function Listen($window, $q) {
+  .factory('listen', function Listen($window, $q) {
       var SpeechRecognition =
         $window.SpeechRecognition ||
         $window.webkitSpeechRecognition;
