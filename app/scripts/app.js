@@ -10,8 +10,8 @@ var menu = [
   'Rueda',
   'Matryoshka',
   'Simon',
-  'Primer grado',
-  'Cartas'
+  'Cartas',
+  'Primer grado'
 ];
 
 angular.module('directivasApp', [
