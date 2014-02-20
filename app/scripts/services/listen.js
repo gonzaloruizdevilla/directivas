@@ -21,6 +21,14 @@ angular.module('directivasApp')
         }
       };
 
+      recognizer.onerror = function (e){
+        listeners.forEach(function (defer){
+          defer.reject(e);
+        });
+        listeners = [];
+        listening = false;
+      };
+
       function listen(){
         var defer = $q.defer();
         listeners.push(defer);

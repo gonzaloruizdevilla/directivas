@@ -20,6 +20,7 @@ angular.module('directivasApp')
             var locals, match, correcto;
 
             scope.adelante = false;
+            scope.error = true;
 
             ngModelCtrl.$setValidity('valores', true);
             ngModelCtrl.$setViewValue(null);
@@ -44,6 +45,15 @@ angular.module('directivasApp')
                 ngModelCtrl.$setValidity('valores', false);
               }
             }
+          }, function (e){
+            ngModelCtrl.$setViewValue(null);
+            ngModelCtrl.$setValidity('valores', true);
+            ngModelCtrl.$setValidity('expresion', true);
+            ngModelCtrl.$setValidity('notallowed', e.error !== 'not-allowed');
+            ngModelCtrl.$setValidity('nospeech', e.error !== 'no-speech');
+            ngModelCtrl.$setValidity('network', e.error !== 'network');
+            scope.adelante = false;
+            scope.error = true;
           });
         };
       }
